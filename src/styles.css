@@ -1,0 +1,88 @@
+body {
+  background-color: #dbf0f4;
+  font-family: "Merriweather Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.box {
+  background-color: white;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 7px 7px 70px rgb(242, 237, 204);
+  border-radius: 15px;
+}
+header {
+  border-bottom: 1px solid #dbf0f4;
+  padding: 0 0 20px 0;
+}
+footer {
+  border-top: 1px solid #dbf0f4;
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+a {
+  color: rgb(99, 121, 181);
+}
+.city {
+  margin: 0;
+  font-size: 33px;
+  font-weight: 700;
+}
+.details {
+  font-size: 16px;
+  line-height: 25px;
+  color: #56575e;
+}
+.search-inp {
+  background-color: #e5f2f5;
+  max-width: 500px;
+  border: none;
+  border-radius: 4px;
+  width: 80%;
+  padding: 14px 20px;
+  font-weight: bold;
+}
+.submit-inp {
+  background-color: #f4f0c7;
+  padding: 14px 20px;
+  width: 15%;
+  border: none;
+  border-radius: 7px;
+  margin-left: 4px;
+  font-size: 13px;
+  color: #56575e;
+  font-weight: bold;
+}
+.place {
+  display: flex;
+  justify-content: space-between;
+}
+.all-temp {
+  display: flex;
+}
+.temp {
+  font-size: 70px;
+  font-weight: bold;
+}
+.emoji {
+  font-size: 40px;
+
+  margin-right: 5px;
+}
+.cel {
+  font-size: 27px;
+}
+main {
+  padding: 20px 0;
+}
+strong {
+  color: rgb(99, 121, 181);
+}
+#submitinp:hover {
+  background-color: #e5f2f5;
+  color: rgb(127, 127, 127);
+  transition-duration: 0.6s;
+  cursor: pointer;
+}

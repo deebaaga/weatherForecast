@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <div class="box">
+  <body>
+    <header>
+        <form>
+      <input type="search"
+       placeholder="Enter a city..."
+        required 
+        class="search-inp"/>
+      <input id="submitinp" 
+      type="submit" 
+      value="Search" 
+      class="submit-inp" />
+      </form>
+    </header>
+
+    <main>
+        <div class="place">
+            <div>
+      <h1 class="city" id="cityy">Search for a City</h1>
+      <p class="details">
+        <span id="day"></span>
+        <span id="time"></span>
+         <span id="feels"> - </span>
+         <br />
+        Humidity:<strong id="humid">-%</strong>, Wind: <strong id="wind">-km/h</strong></div>
+      </p><div class="all-temp">
+      <div class="emoji" id="icon"></div>
+      <div class="temp" id="degree">-</div>
+        <div class="cel">°C</div>
+      </div>
+      </div>
+    </main>
+
+    <footer>
+      This page was coded by <a href="https://github.com/deebaaga" target="_blank"> Deeba Mushtaq</a> , and is <a href="https://github.com/deebaaga/myweatherapp" target="_blank">on github </a> and hosted on <a href="https://www.netlify.com" target="_blank"> Netlify</a>
+  </div>
+  <script src="src/script.js"></script>
+</body>
+</html>
