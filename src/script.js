@@ -59,20 +59,19 @@ window.onload = function () {
 };
 
 function displayForecast() {
-  let forecast = document.querySelector("#weatherForecast");
+  //let forecast = document.querySelector("#weatherForecast");
   let days = ["Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
+
   days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+    forecastHtml += `
       <div class="forecast">
 <div class="forecastDay">${day}</div>
         <div class="forecastIcon">☀️</div>
         <div class="forecastTemp">19° | <span class="night">15°</span></div>
       </div>`;
   });
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#weatherForecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
