@@ -47,32 +47,58 @@ window.onload = function () {
 
     let iconn = document.querySelector("#icon");
     iconn.innerHTML = `<img src="${iconUrl}" class="emoji" />`;
+
+    getForecast(response.data.city);
   }
   function cityinput(event) {
     event.preventDefault();
     let city = document.querySelector(".search-inp").value;
     let apiKey = "ba24ot429e5023e68078f3c73b9cdf5d";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemp);
   }
   document.querySelector("form").addEventListener("submit", cityinput);
 };
 
-function displayForecast() {
+function Day(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function getForecast(city) {
+  let apiKey = "ba24ot429e5023e68078f3c73b9cdf5d";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   //let forecast = document.querySelector("#weatherForecast");
-  let days = ["Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml += `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 4) {
+      forecastHtml += `
       <div class="forecast">
-<div class="forecastDay">${day}</div>
-        <div class="forecastIcon">☀️</div>
-        <div class="forecastTemp">19° | <span class="night">15°</span></div>
+<div class="forecastDay">${Day(day.time)}</div>
+<div class="forecastIcon">
+
+       <img src="${day.condition.icon_url}"
+
+        </div>
+        <div class="forecastTemp">${Math.round(
+          day.temperature.maximum
+        )}° | <span class="night">${Math.round(
+        day.temperature.minimum
+      )}°</span></div>
       </div>`;
+    }
   });
+
   let forecastElement = document.querySelector("#weatherForecast");
   forecastElement.innerHTML = forecastHtml;
 }
-
-displayForecast();

@@ -86,26 +86,38 @@ strong {
   transition-duration: 0.6s;
   cursor: pointer;
 }
+
 .forecast {
-  display: inline-block;
-  padding: 15px;
+  display: flex;
+  justify-content: space-around;
 }
 .forecastDay {
   color: black;
-  margin-top: 5px;
   font-weight: bold;
   text-align: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  left: 80px;
+  flex: 1 1 100px;
 }
 .forecastTemp {
   color: rgb(99, 121, 181);
+  text-align: center;
   display: flex;
+  font-size: 18px;
   justify-content: center;
+  flex: 1 1 100px;
 }
 .night {
   color: rgba(99, 121, 181, 0.636);
 }
 .forecastIcon {
-  font-size: xx-large;
+  font-size: 17px;
   text-align: center;
   padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+
+  flex: 1 1 100px;
 }
